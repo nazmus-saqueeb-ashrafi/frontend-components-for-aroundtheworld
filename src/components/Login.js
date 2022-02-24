@@ -17,7 +17,7 @@ const Login = () => {
 
                 <h1 class="font-['Abril'] font-bold italic text-5xl text-sky-500">Around the world</h1>
 
-                <p class="leading-relaxed mt-0">Document your travel journey and share with your friends and family.</p>
+                <p class="leading-relaxed mt-0">Document your travel journey, share with your friends and family.</p>
                 
               </div>
               <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">

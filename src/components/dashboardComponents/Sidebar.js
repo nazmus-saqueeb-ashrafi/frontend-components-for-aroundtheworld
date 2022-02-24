@@ -10,7 +10,6 @@ const Sidebar
     
     <div class="sidebar flex flex-col w-64 h-screen py-8 bg-white border-r dark:bg-base-200 dark:border-base-100 inset-y-0 left-0 -translate-x-full md:translate-x-0 transform  md:relative transition duration-200 ease-in-out ">
 
-        
 
             {/* -translate-x-full md:translate-x-0 */}
 
