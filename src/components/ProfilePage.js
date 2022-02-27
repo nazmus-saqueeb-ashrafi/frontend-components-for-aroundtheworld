@@ -42,13 +42,6 @@ const ProfilePage = () => {
         section2.classList.toggle("md:translate-y-96")
         section2.classList.toggle("xl:translate-y-0")
 
-
-
-        // sidebar.classList.toggle("translate-x-64");
-        // sidebar.classList.toggle("md:-translate-x-64");
-
-        // ['transform','translate-x-0', 'transition', 'duration-200','ease-in-out'].map(v=> sidebar.classList.toggle(v) )
-
     }
 
     
@@ -75,7 +68,6 @@ const ProfilePage = () => {
             variants={profileCardVariants} animate={isOpen ? "open" : "closed"}
             
             >
-
                 
                 <motion.div class="card w-72 bg-base-100 shadow-xl grid place-items-center z-10" >
 
@@ -129,42 +121,73 @@ const ProfilePage = () => {
                 
             </div>
         </div>
+
+        {/* <div class="flex">
+            <div class="flex-none bg-slate-400">
+                01
+            </div>
+            <div class="flex-auto w-96 bg-slate-300">
+                02
+            </div>
+            <div class="flex-auto w-96 bg-slate-200">
+                03
+            </div>
+        </div> */}
         
         {/* 2nd section */}
-        <div class="section-2 grid place-items-center xl:grid-cols-4 pt-10 xl:relative transition duration-200 ease-in-out" >
-
-            <div class="tabs xl:pl-10">
+        <div class="section-2 grid place-items-center xl:grid-cols-4 pt-10 xl:pl-28 xl:pr-28 xl:relative transition duration-200 ease-in-out pl-7 pr-7" >
+            
+            {/* tab */}
+            <div class="tabs pb-5 xl:col-start-1 xl:col-span-3">
                 <a class="tab tab-bordered tab-active">Posts</a> 
                 <a class="tab tab-bordered">Shares</a> 
                 <a class="tab tab-bordered">Friends</a>
             </div>
 
-            <div className='z-10 xl:col-start-1 xl:col-span-3 place-items-center md:pl-10 pt-10'>
+            {/* 'make a post' card */}
+            <div className='flex justify-start items-center bg-base-100 shadow-xl z-10 xl:col-start-1 xl:col-span-3 pt-2 pb-2 xl:pr-10 xl:pl-10 pr-5 pl-5 w-full rounded-xl'>
 
-                <div class="card w-100 bg-base-200 shadow-xl grid place-items-center" ref={constraintsRef}
-
-                style={{width: "65vw", height: 400}}
-                
-                >
-                <div class="card card-side bg-base-100 shadow-xl">
-                <figure><img src="https://api.lorem.space/image/movie?w=200&h=280" alt="Movie"/></figure>
-                <div class="card-body">
-                    <h2 class="card-title">New movie is released!</h2>
-                    <p>Click the button to watch on Jetflix app.</p>
-                    <div class="justify-end card-actions">
-                    <button class="btn btn-primary">Watch</button>
+                {/* avatar */}
+                <div class="avatar pr-10">
+                    <div class="md:w-20 w-16 mask mask-squircle">
+                        <img src="https://api.lorem.space/image/face?hash=92048"/>
                     </div>
                 </div>
+                
+                <div class='flex-grow pt-4'>
+                    <div class=" btn-outline cursor-pointer rounded-full p-2 bg-slate-600 hover:bg-slate-500 hover:text-slate-50"><span class='text-lg pl-3'>Where did you go, Simon?</span></div>
+
+
+                    <div class='flex justify-center items-center xl:p-3 p-1 space-x-3'>
+                        <button class="btn btn-ghost hover:bg-slate-600 flex-grow rounded-full normal-case font-normal">Location</button>
+
+                        <button class="btn btn-ghost hover:bg-slate-600 flex-grow rounded-full normal-case font-normal ">Photo</button>
+                        
+                        <button class="flex btn btn-ghost hover:bg-slate-600 flex-grow rounded-full normal-case font-normal">
+                            <svg class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M6.707 4.879A3 3 0 018.828 4H15a3 3 0 013 3v6a3 3 0 01-3 3H8.828a3 3 0 01-2.12-.879l-4.415-4.414a1 1 0 010-1.414l4.414-4.414zm4 2.414a1 1 0 00-1.414 1.414L10.586 10l-1.293 1.293a1 1 0 101.414 1.414L12 11.414l1.293 1.293a1 1 0 001.414-1.414L13.414 10l1.293-1.293a1 1 0 00-1.414-1.414L12 8.586l-1.293-1.293z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Mood</span>
+                        </button>
+
+                        
+
+                    </div>
+                    
+
                 </div>
                 
-            </div>
+
+                {/* md:w-96 w-44 */}
                 
             </div>
 
 
-
+        
 
         </div>
+
+        
     </>
   )
 }
