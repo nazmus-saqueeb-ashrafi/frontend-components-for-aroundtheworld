@@ -75,16 +75,7 @@ const ExpandedPostMaker = ({showModal,setShowModal}) => {
 
                 <button data-modal-toggle="defaultModal" type="button" class="btn btn-info mt-4 mb-2 w-full">Post</button>
 
-
-                
-
-                    
-
-    
             </div>
-            
-
-       
 
         </Modal>
         

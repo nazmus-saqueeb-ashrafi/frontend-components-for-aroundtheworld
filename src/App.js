@@ -7,7 +7,7 @@ import ProfilePage from './components/ProfilePage';
 
 import {AnimatePresence} from "framer-motion"
 
-import "@material-tailwind/react/tailwind.css";
+// import "@material-tailwind/react/tailwind.css";
 
 
 
