@@ -1,21 +1,29 @@
 import React from 'react'
 import { useDimensions } from "../../useDimentions"
 import Map from 'react-map-gl';
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-const ExpandedPostMaker = () => {
+import Modal from "../profilePageComponents/Modal";
+import ModalHeader from "../profilePageComponents/ModalHeader";
+
+const ExpandedPostMaker = ({showModal,setShowModal}) => {
 
     const constraintsRef = useRef(null);
     const { width,height } = useDimensions(constraintsRef);
+    
 
   return (
       
     <>
+        
+            <Modal size="" id="defaultModal" active={showModal} toggler={() => setShowModal(false)} aria-hidden="true" >
 
-        <div class="bg-base-100 shadow-xl z-10 xl:col-start-1 xl:col-span-3 pt-2 pb-2 xl:pr-10 xl:pl-10 pr-5 pl-5 w-full rounded-xl mt-5">
+                {/* class="bg-base-100 shadow-xl z-50 xl:w-1/2 w-11/12 rounded-xl pt-2 pb-2 xl:pr-10 xl:pl-10 pr-5 pl-5 absolute" */}
 
-            <div class="grid place-items-center">
+            <div class="grid place-items-center bg-base-100">
 
+                <ModalHeader toggler={() => setShowModal(false)}/>
+                    
 
                 <div class="flex justify-start items-center pt-3 pb-4">
                     <div class="avatar pr-5">
@@ -23,7 +31,7 @@ const ExpandedPostMaker = () => {
                             <img src="https://api.lorem.space/image/face?hash=92048"/>
                         </div>
                     </div>
-                    <h3>Maluha is feeling good at Sibui</h3>
+                    <h3>Maluha is feeling good at Sibui.</h3>
                 </div>
 
                 
@@ -65,16 +73,24 @@ const ExpandedPostMaker = () => {
 
                 </div>
 
-                <button class="btn btn-info mt-4 mb-2 w-full">Post</button>
+                <button data-modal-toggle="defaultModal" type="button" class="btn btn-info mt-4 mb-2 w-full">Post</button>
+
+
+                
+
                     
 
     
             </div>
             
 
-        </div>
+       
+
+        </Modal>
+        
     </>
   )
 }
+
 
 export default ExpandedPostMaker

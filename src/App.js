@@ -7,6 +7,11 @@ import ProfilePage from './components/ProfilePage';
 
 import {AnimatePresence} from "framer-motion"
 
+import "@material-tailwind/react/tailwind.css";
+
+
+
+
 const App = () => {
   return (
     <Router >

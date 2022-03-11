@@ -8,9 +8,18 @@ import UnExpandedPostMaker from './profilePageComponents/UnExpandedPostMaker';
 import ExpandedPostMaker from './profilePageComponents/ExpandedPostMaker';
 
 
+import Modal from "@material-tailwind/react/Modal";
+import ModalHeader from "@material-tailwind/react/ModalHeader";
+import ModalBody from "@material-tailwind/react/ModalBody";
+import ModalFooter from "@material-tailwind/react/ModalFooter";
+import Button from "@material-tailwind/react/Button";
+
+
 const ProfilePage = () => {
     const constraintsRef = useRef(null);
     const { width,height } = useDimensions(constraintsRef);
+
+    const [showModal, setShowModal] = useState(false);
 
 
     const profileCardVariants ={
@@ -137,7 +146,7 @@ const ProfilePage = () => {
         </div> */}
         
         {/* 2nd section */}
-        <div class="section-2 grid place-items-center xl:grid-cols-4 pt-10 xl:pl-28 xl:pr-28 xl:relative transition duration-200 ease-in-out pl-7 pr-7" >
+        <div class="section-2 grid place-items-center xl:grid-cols-4 pt-10 xl:pl-28 xl:pr-28 xl:relative transition duration-200 ease-in-out pl-7 pr-7">
             
             {/* tab */}
             <div class="tabs pb-5 xl:col-start-1 xl:col-span-3">
@@ -147,15 +156,15 @@ const ProfilePage = () => {
             </div>
 
             {/* 'unexpanded post' card */}
-             <UnExpandedPostMaker/>
+             <UnExpandedPostMaker showModal={showModal} setShowModal={setShowModal}/>
 
+        </div>
 
-            {/* 'expanded post' card */}
-            <ExpandedPostMaker/>
+            
+        {/* 'expanded post' card */}
+        <div class="grid place-items-center">
+            <ExpandedPostMaker showModal={showModal} setShowModal={setShowModal}/>
 
-
-
-                
         </div>
 
         

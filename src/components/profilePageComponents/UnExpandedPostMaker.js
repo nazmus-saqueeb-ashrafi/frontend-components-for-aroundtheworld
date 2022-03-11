@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UnExpandedPostMaker = () => {
+const UnExpandedPostMaker = ({showModal,setShowModal}) => {
   return (
     <>
     <div className='flex justify-start items-center bg-base-100 shadow-xl z-10 xl:col-start-1 xl:col-span-3 pt-2 pb-2 xl:pr-10 xl:pl-10 pr-5 pl-5 w-full rounded-xl'>
@@ -13,7 +13,8 @@ const UnExpandedPostMaker = () => {
                 
                 {/* buttons */}
                 <div class='flex-grow pt-4'>
-                    <div class=" btn-outline cursor-pointer rounded-full p-2 bg-slate-600 hover:bg-slate-500 hover:text-slate-50"><span class='text-lg pl-3'>Where did you go, Simon?</span></div>
+
+                    <div class=" btn-outline cursor-pointer rounded-full p-2 bg-slate-600 hover:bg-slate-500 hover:text-slate-50 "  data-modal-toggle="defaultModal" type="button" onClick={(e) => setShowModal(true)}><span class='text-lg pl-3'>Where did you go, Simon?</span></div>
 
 
                     <div class='flex justify-center items-center xl:p-3 p-1 space-x-3'>
