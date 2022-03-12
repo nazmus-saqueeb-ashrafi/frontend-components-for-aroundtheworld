@@ -8,12 +8,8 @@ import UnExpandedPostMaker from './profilePageComponents/UnExpandedPostMaker';
 import ExpandedPostMaker from './profilePageComponents/ExpandedPostMaker';
 
 
-import Modal from "@material-tailwind/react/Modal";
-import ModalHeader from "@material-tailwind/react/ModalHeader";
-import ModalBody from "@material-tailwind/react/ModalBody";
-import ModalFooter from "@material-tailwind/react/ModalFooter";
-import Button from "@material-tailwind/react/Button";
 import Post from './profilePageComponents/Post';
+import FriendsBlock from './profilePageComponents/FriendsBlock';
 
 
 const ProfilePage = () => {
@@ -23,7 +19,7 @@ const ProfilePage = () => {
     const [showModal, setShowModal] = useState(false);
 
 
-    const profileCardVariants ={
+    const profileCardVariants = {
         open: {
         
         y: 0,
@@ -47,12 +43,20 @@ const ProfilePage = () => {
 
     const slideButtonClick = () =>{
         const section2 = document.querySelector(".section-2");
+        const friends = document.querySelector(".friends-block");
 
         setIsOpen(!isOpen)
 
+        //
         section2.classList.toggle("translate-y-96")
         section2.classList.toggle("md:translate-y-96")
         section2.classList.toggle("xl:translate-y-0")
+
+        //
+        friends.classList.toggle("translate-y-96")
+        friends.classList.toggle("md:translate-y-96")
+        friends.classList.toggle("xl:translate-y-96")
+        
 
     }
 
@@ -80,8 +84,8 @@ const ProfilePage = () => {
             variants={profileCardVariants} animate={isOpen ? "open" : "closed"}
             
             >
-                
-                <motion.div class="card w-72 bg-base-100 shadow-xl grid place-items-center z-10" >
+                {/* follow card */}
+                <motion.div class="card w-72 bg-base-100 shadow-xl grid place-items-center z-10">
 
                     {/* vertical slide button */}
                     <button className='slideBtn btn btn-info btn-sm mt-5 ml-5 absolute top-0 left-0' onClick={slideButtonClick}>
@@ -148,9 +152,12 @@ const ProfilePage = () => {
         
         {/* 2nd section */}
         <div class="section-2 grid place-items-center xl:grid-cols-4 pt-10 xl:pl-28 xl:pr-28 xl:relative transition duration-200 ease-in-out pl-7 pr-7 mt-3 ">
+
+            <FriendsBlock/>
+
             
             {/* tab */}
-            <div class="tabs pb-5 xl:col-start-1 xl:col-span-3">
+            <div class=" tabs pb-5 xl:col-start-1 xl:col-span-3">
                 <a class="tab tab-bordered tab-active">Posts</a> 
                 <a class="tab tab-bordered">Shares</a> 
                 <a class="tab tab-bordered">Friends</a>
@@ -161,7 +168,12 @@ const ProfilePage = () => {
 
              <hr class="w-full xl:col-start-1 xl:col-span-3 mt-8 opacity-10"></hr>
 
+            {/* post */}
              <Post/>
+
+            
+
+             
 
         </div>
 
@@ -171,6 +183,8 @@ const ProfilePage = () => {
             <ExpandedPostMaker showModal={showModal} setShowModal={setShowModal}/>
 
         </div>
+
+        
         
     </>
   )
