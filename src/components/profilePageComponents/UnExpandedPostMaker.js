@@ -3,7 +3,7 @@ import React from 'react'
 const UnExpandedPostMaker = ({showModal,setShowModal}) => {
   return (
     <>
-    <div className='flex justify-start items-center bg-base-100 shadow-xl z-10 xl:col-start-1 xl:col-span-3 pt-2 pb-2 xl:pr-10 xl:pl-10 pr-5 pl-5 w-full rounded-xl'>
+    <div className='flex justify-start items-center bg-base-100 shadow-xl z-10 pt-2 pb-2 xl:pr-10 xl:pl-10 pr-5 pl-5 rounded-xl'>
         {/* avatar */}
                 <div class="avatar pr-10">
                     <div class="md:w-20 w-16 mask mask-squircle">

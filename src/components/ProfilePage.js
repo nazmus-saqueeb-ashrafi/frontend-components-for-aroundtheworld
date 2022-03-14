@@ -4,10 +4,9 @@ import { motion } from "framer-motion"
 import { useRef, useState } from "react";
 
 import { useDimensions } from "../useDimentions"
+
 import UnExpandedPostMaker from './profilePageComponents/UnExpandedPostMaker';
 import ExpandedPostMaker from './profilePageComponents/ExpandedPostMaker';
-
-
 import Post from './profilePageComponents/Post';
 import FriendsBlock from './profilePageComponents/FriendsBlock';
 
@@ -164,12 +163,16 @@ const ProfilePage = () => {
             </div>
 
             {/* 'unexpanded post' card */}
-             <UnExpandedPostMaker showModal={showModal} setShowModal={setShowModal}/>
+            <div class="xl:col-start-1 xl:col-span-3 w-full">
+                <UnExpandedPostMaker showModal={showModal} setShowModal={setShowModal}/>
+                <hr class="w-full xl:col-start-1 xl:col-span-3 mt-8 opacity-10"></hr>
 
-             <hr class="w-full xl:col-start-1 xl:col-span-3 mt-8 opacity-10"></hr>
+                {/* post */}
+                <Post/>
+            </div>
+             
 
-            {/* post */}
-             <Post/>
+             
 
             
 

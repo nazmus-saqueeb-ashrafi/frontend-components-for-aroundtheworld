@@ -46,7 +46,7 @@ const Nav = ({dark,setDark}) => {
                 {/* <button onClick={darkBtn}>Dark mode</button> */}
               
               {/* Mobile menu button */}
-              <div onClick={burgerButtonClick} className="mobile-menu-button xs:absolute inset-y-0 left-0 flex items-center">
+              <div onClick={burgerButtonClick} className="mobile-menu-button xs:absolute inset-y-0 left-0 flex items-center hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -74,7 +74,7 @@ const Nav = ({dark,setDark}) => {
               
 
               
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex-1 flex items-center justify-start ml-5 xl:ml-0 sm:items-stretch sm:justify-start">
 
                 
                   {/* Mobile menu button */}
@@ -131,7 +131,7 @@ const Nav = ({dark,setDark}) => {
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
-                    <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-400 dark:focus:ring-offset-gray-800 dark:focus:ring-white">
+                    <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-400 dark:focus:ring-offset-gray-800 dark:focus:ring-white z-50">
                       <span className="sr-only">Open user menu</span>
                       {/* profile picture */}
                       <img

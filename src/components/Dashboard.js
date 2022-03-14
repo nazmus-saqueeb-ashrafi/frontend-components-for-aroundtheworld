@@ -3,6 +3,11 @@ import Nav from './dashboardComponents/Nav'
 import { useState, useEffect } from 'react';
 
 
+import ExpandedPostMaker from './profilePageComponents/ExpandedPostMaker';
+import Post from './profilePageComponents/Post';
+import UnExpandedPostMaker from './profilePageComponents/UnExpandedPostMaker';
+
+
 
 export default function Dashboard() {
 
@@ -18,6 +23,8 @@ export default function Dashboard() {
   //   darkMode()
 
   // },[setDark])
+
+  const [showModal, setShowModal] = useState(false);
 
 
   return (
@@ -39,9 +46,35 @@ export default function Dashboard() {
           </div>
         </div> */}
 
+        <div class="absolute">
+          <Sidebar/>
 
-        {/* sidebar */}
-        <Sidebar/>
+        </div>
+
+        <div class="grid place-items-center xl:grid-cols-5 md:grid-cols-4 grid-cols-1">
+
+          {/* 'unexpanded post' card */}
+          <div class="xl:col-start-2 xl:col-span-3 md:col-start-2 md:col-span-3 xl:ml-0 xl:mr-0 xl:w-full lg:w-11/12 lg:ml-0 lg:mr-10 md:w-10/12 md:ml-10 w-full">
+            <UnExpandedPostMaker showModal={showModal} setShowModal={setShowModal}/>
+            <hr class="w-full xl:col-start-1 xl:col-span-3 mt-8 opacity-10"></hr>
+
+            {/* post */}
+            <Post/>
+
+          </div>
+
+
+          {/* sidebar */}
+        
+
+        </div>
+
+
+        {/* 'expanded post' card */}
+        <div class="grid place-items-center">
+            <ExpandedPostMaker showModal={showModal} setShowModal={setShowModal}/>
+
+        </div>
 
       </div>
     

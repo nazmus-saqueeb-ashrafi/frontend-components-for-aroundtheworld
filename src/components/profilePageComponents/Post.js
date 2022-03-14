@@ -3,7 +3,7 @@ import Map from 'react-map-gl';
 
 const Post = () => {
   return (
-    <div class="xl:col-start-1 xl:col-span-3 xl:grid xl:grid-cols-3 flex gap-6 w-full xl:h-96 grid-rows-4 p-4 bg-base-100 shadow-xl card card pt-10 pr-10 pl-10 mt-5">
+    <div class="xl:grid xl:grid-cols-3 flex gap-6 w-full xl:h-96 grid-rows-4 p-4 bg-base-100 shadow-xl card card pt-10 pr-10 pl-10 mt-5">
 
         <div class="col-span-1 row-span-3 text-center p-2 card rounded-none h-60">
             <Map
