@@ -52,8 +52,8 @@ const ProfilePage = () => {
         section2.classList.toggle("xl:translate-y-0")
 
         //
-        friends.classList.toggle("translate-y-96")
-        friends.classList.toggle("md:translate-y-96")
+        friends.classList.toggle("translate-y-0")
+        friends.classList.toggle("md:translate-y-0")
         friends.classList.toggle("xl:translate-y-96")
         
 
@@ -150,11 +150,11 @@ const ProfilePage = () => {
         </div> */}
         
         {/* 2nd section */}
-        <div class="section-2 grid place-items-center xl:grid-cols-4 pt-10 xl:pl-28 xl:pr-28 xl:relative transition duration-200 ease-in-out pl-7 pr-7 mt-3 ">
+        <div class="section-2 grid place-items-center xl:grid-cols-4 grid-cols-1 pt-10 xl:pl-28 xl:pr-28 xl:relative transition duration-200 ease-in-out pl-7 pr-7 mt-3">
 
+            {/* friends block */}
             <FriendsBlock/>
 
-            
             {/* tab */}
             <div class=" tabs pb-5 xl:col-start-1 xl:col-span-3">
                 <a class="tab tab-bordered tab-active">Posts</a> 
